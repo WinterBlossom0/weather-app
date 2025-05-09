@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Location -->
+        <div class="location-header">
+            <h1 id="city-name">--</h1>
+            <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+        </div>
+        
+        <div class="header-subtitle">
+            <p>Weather Forecast</p>
+        </div>
+        
+        <!-- Location Input -->
+        <div class="location-input">
+            <input type="text" id="location-input" placeholder="Enter city, zip, or coordinates...">
+            <button id="location-submit"><i class="fas fa-search"></i></button>
+            <button id="current-location"><i class="fas fa-map-marker-alt"></i></button>
+        </div>
+
+        <!-- Main Weather Metrics -->
+        <div class="weather-metrics">
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-temperature-high"></i>
+                    <span>Temperature</span>
+                </div>
+                <div class="metric-value" id="temperature">--°C</div>
+                <div class="metric-next" id="temp-next">Next: --°C <span class="trend falling">FALLING</span></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-tint"></i>
+                    <span>Humidity</span>
+                </div>
+                <div class="metric-value" id="humidity">--%</div>
+                <div class="metric-next" id="humidity-next">Next: --% <span class="trend falling">FALLING</span></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-wind"></i>
+                    <span>Wind Speed</span>
+                </div>
+                <div class="metric-value" id="wind-speed">-- km/h</div>
+                <div class="metric-next" id="wind-next">Next: -- km/h <span class="trend falling">FALLING</span></div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-compress-alt"></i>
+                    <span>Pressure</span>
+                </div>
+                <div class="metric-value" id="pressure">-- mb</div>
+                <div class="metric-next" id="pressure-next">Next: -- mb <span class="trend falling">FALLING</span></div>
+            </div>
+        </div>
+
+        <!-- Prediction Banner -->
+        <div class="prediction-banner">
+            <div class="prediction-icon">
+                <i class="fas fa-sun"></i>
+            </div>
+            <div class="prediction-text">
+                <h3>Next Hour Prediction</h3>
+                <p id="prediction-desc">No Rain Expected</p>
+            </div>
+        </div>
+        
+        <!-- All Weather Sections -->
+        <div class="all-weather-sections">
+            <!-- Forecast Section -->
+            <div class="section" id="forecast-section">
+                <h3>7-Day Forecast</h3>
+                <div class="forecast-items" id="forecast-items">
+                    <!-- Forecast items will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sunrise/Sunset Section -->
+            <div class="section" id="sun-section">
+                <h3>Sunrise & Sunset</h3>
+                <div class="sun-container">
+                    <div class="sun-item">
+                        <i class="fas fa-sun"></i>
+                        <div>
+                            <p>Sunrise</p>
+                            <p id="sunrise">--:--</p>
+                        </div>
+                    </div>
+                    <div class="sun-item">
+                        <i class="fas fa-moon"></i>
+                        <div>
+                            <p>Sunset</p>
+                            <p id="sunset">--:--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Air Quality Section -->
+            <div class="section" id="aqi-section">
+                <h3>Air Quality Index</h3>
+                <div class="aqi-display">
+                    <div class="aqi-value" id="aqi-value">--</div>
+                    <p id="aqi-desc">--</p>
+                </div>
+                <div class="aqi-scale">
+                    <span class="aqi-good">Good</span>
+                    <span class="aqi-moderate">Moderate</span>
+                    <span class="aqi-poor">Poor</span>
+                    <span class="aqi-very-poor">Very Poor</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
